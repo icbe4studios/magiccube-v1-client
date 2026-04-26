@@ -3,14 +3,23 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <Image
-        src="/brandlogo.png"
-        alt="Brand Logo"
-        width={400}
-        height={400}
-        priority
-        className="object-contain h-72 w-72 lg:h-96 lg:w-w96"
-      />
+      <div className="relative h-72 w-72 lg:h-96 lg:w-96">
+        <Image
+          src="/brandlogo-dark.png"
+          alt="Brand Logo Dark"
+          fill
+          priority
+          className="hidden dark:block object-contain"
+        />
+
+        <Image
+          src="/brandlogo-light.png"
+          alt="Brand Logo Light"
+          fill
+          priority
+          className="block dark:hidden object-contain"
+        />
+      </div>
     </div>
   );
 }
